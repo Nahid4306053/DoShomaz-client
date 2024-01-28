@@ -20,9 +20,7 @@ export default function BlogFullPreview() {
     window.scrollTo(0, 0);
   }, [id]);
 
-  useEffect(()=>{
-   Axios.put(`/Blog/views/${id}`)
-  },[]);
+
 
   return (
     <div className="col-span-full lg:pr-10 lg:col-span-8">

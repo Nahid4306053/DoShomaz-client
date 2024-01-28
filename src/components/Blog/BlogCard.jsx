@@ -27,7 +27,7 @@ export default function BlogCard({ element }) {
           {/* <!-- this is line --> */}
           {/*style="margin-top: 10px;line-height: 26px;"*/}
           <p style={{ margin: "15px auto", lineHeight: "26px" }}>
-            {element.description.slice(0, 284) + "...."}
+            {element.body.slice(0, 284) + "...."}
           </p>
           <Link to={`/post/${element._id}`}>
             <button className="mt-2">

@@ -4,21 +4,18 @@ import Acount from "./Acount";
 // import CategoreyDropdown from '../components/CategoreyDropdown';
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../Context/Authinicetion";
-import CategoreyDropdown from "./CategoreyDropdown";
+
 
 export default function Navbar() {
   const { currentUser } = useAuth();
   const links = (
     <>
       <li>
-        <NavLink
-          to="/"
-          className="text-[#002347] font-bold mr-5  cursor-pointer"
-        >
+        <NavLink to="/" className="text-[#002347] font-bold mr-5  cursor-pointer" >
           Blogs
         </NavLink>
       </li>
-      <CategoreyDropdown />
+   
       <li>
         <a className="text-[#002347] font-bold mr-5 cursor-pointer">About us</a>
       </li>

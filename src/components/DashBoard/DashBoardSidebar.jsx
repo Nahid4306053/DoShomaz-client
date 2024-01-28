@@ -25,15 +25,6 @@ const {currentUser} = useAuth()
           <p className="lg:block hidden">Add New Blog</p>
         </NavLink>
         <a className="item">
-          <i className="fa-solid fa-heart"></i>
-          <p className="lg:block hidden">My Folowers</p>
-        </a>
-
-        <NavLink to="/" className="item">
-          <i className="fa-duotone fa-browser"></i>
-          <p className="lg:block hidden">All Blogs</p>
-        </NavLink>
-        <a className="item">
           <i className="fa-solid fa-messages-question"></i>
           <p className="lg:block hidden">Contact & Support</p>
         </a>
