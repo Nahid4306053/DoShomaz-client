@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
@@ -9,7 +10,7 @@ import ReplayForm from "./ReplayForm";
 import ErrorComponent from "../Shared/ErrrorComponet";
 import LoadingComponet from "../Shared/LoadingComponent";
 export default function CommentList({ id }) {
-  const [currentCommentId, setCureentCommentID] = useState();
+  const [currentComment, setCurrentComment] = useState();
   const { Comments, error, isLoading, isError, isSuccess } = useComments(id);
 
   return isLoading ? (
@@ -32,17 +33,7 @@ export default function CommentList({ id }) {
               <li key={ele._id}>
                 <div className="commentItems come ">
                   <div className="media flex items-center mt-8">
-                    <a className="flex pages mr-5">
-                      {" "}
-                      <img
-                        className="h-16 w-16 object-cover"
-                        src={
-                          ele?.commenter?.photoURL ||
-                          "https://i.ibb.co/XkqVpKX/1682708266984.jpg"
-                        }
-                        alt=""
-                      />{" "}
-                    </a>
+                    <a className="flex pages mr-5"> {" "} <img className="h-16 w-16 object-cover" src={ ele?.commenter?.photoURL || "https://i.ibb.co/XkqVpKX/1682708266984.jpg" } alt="" />{" "} </a>
 
                     <div className="">
                       <div className="p-0 flex ">
@@ -56,20 +47,21 @@ export default function CommentList({ id }) {
                       <p className="mt-1">{ele.comment}</p>
                     </div>
                   </div>
-                  <a
-                    className="Replay cursor-pointer"
-                    onClick={() =>
-                      setCureentCommentID({
-                        id: ele._id,
-                        name: ele?.commenter?.displayName,
-                      })
-                    }
-                  >
-                    Reply
-                  </a>
+                  <div>
+                    <details className="dropdown dropdown-end">
+                      <summary className="m-1 btn"><i class="fa-solid fa-ellipsis-vertical"></i></summary>
+                      <ul className="p-2 shadow-lg menu dropdown-content z-[1] bg-base-300 rounded-sm w-[100px]">
+                        <li>
+                          <a onClick={()=>setCurrentComment(ele)}>Edit</a>
+                        </li>
+                        <li>
+                          <a>Delete</a>
+                        </li>
+                      </ul>
+                    </details>
+                  </div>
                 </div>
-
-              
+              {currentComment._id === ele._id &&  <ReplayForm currentComment={currentComment} setCurrentComment={setCurrentComment}></ReplayForm>}
               </li>
             );
           })

@@ -6,14 +6,14 @@ import { useRef } from "react";
 import toast from "react-hot-toast";
 import useAxios from "../../Hooks/DataFeachting/useAxios";
 // import "../scss/Commentform.scss";
-export default function ReplayForm({ currentCommentId, setCureentCommentID }) {
+export default function ReplayForm({ currentComment, setCurrentComment }) {
   const Axios = useAxios();
   const formref = useRef();
   const Queryclient = useQueryClient();
   const Mutation = useMutation({
     mutationFn: async (data) => {
-      const res = await Axios.put(
-        `/comment/replay/${currentCommentId.id}`,
+      const res = await Axios.patch(
+        `/comment/${currentComment._id}`,
         data
       );
       return res;
@@ -21,7 +21,7 @@ export default function ReplayForm({ currentCommentId, setCureentCommentID }) {
     onSuccess: () => {
       formref.current.reset();
       Queryclient.invalidateQueries("Comments");
-      setCureentCommentID("");
+      setCurrentComment("");
     },
     onError: (err) => {
       toast.error("There is server side errro Occured");
@@ -30,11 +30,11 @@ export default function ReplayForm({ currentCommentId, setCureentCommentID }) {
   const handelReplay = (form) => {
     form.preventDefault();
     const formdata = {};
-    formdata.replay = form.target.comment.value.trim();
-    if (formdata.replay) {
+    formdata.comment = form.target.comment.value.trim();
+    if (formdata.comment) {
       Mutation.mutate(formdata);
     } else {
-      toast.error("Please write your replay");
+      toast.error("Please write your comment");
     }
   };
   return (
@@ -45,13 +45,13 @@ export default function ReplayForm({ currentCommentId, setCureentCommentID }) {
     >
       <div className="col-12">
         <textarea
-          defaultValue={currentCommentId.name}
+          defaultValue={currentComment.comment}
           style={{ height: 80 }}
           id="text"
           required
           name="comment"
           className="form-control"
-          placeholder="Masage"
+          placeholder="Mesage"
           cols="30"
           rows="2"
           aria-label="With textarea"
@@ -59,13 +59,13 @@ export default function ReplayForm({ currentCommentId, setCureentCommentID }) {
       </div>
       <div className="mt-5 flex justify-end p-0">
         <div
-          onClick={() => setCureentCommentID("")}
+          onClick={() => setCurrentComment("")}
           className="btn btn-sm btn-ghost    mt-1 py-0"
         >
           close
         </div>
         <button type="submit" className="btn  btn-ghost  btn-sm  mt-1 py-0">
-          Replay
+          save
         </button>
       </div>
     </form>
