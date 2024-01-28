@@ -46,7 +46,7 @@ export default function MyBlogs() {
                       <TableRow key={ele._id} data={ele}>
                         
                         <th>
-                          <Deleitem></Deleitem>
+                          <Deleitem id={ele._id}></Deleitem>
                           <Link to={`/dashboard/update-blog/${ele._id}`}><button data-tip="Edit The Blog" className="btn tooltip btn-ghost btn-xs">
                           <i className="fa-solid fa-pen-to-square"></i>
                           

@@ -109,7 +109,7 @@ export default function HandelBlog() {
               {" "}
             </textarea>
             <button className="btn bg-blue-950 text-warning hover:bg-blue-950 mt-10">
-              Publish now
+            {mutation.isPending ? <span className="loading loading-dots loading-md"></span> : " Publish now"} 
             </button>
           </div>
         </div>

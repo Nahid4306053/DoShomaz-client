@@ -133,7 +133,8 @@ export default function UpdateBlog() {
             </textarea>
 
             <button className="btn bg-blue-950 text-warning hover:bg-blue-950 mt-10">
-              Update now
+            {mutation.isPending ? <span className="loading loading-dots loading-md"></span> : "Update now"} 
+             
             </button>
           </div>
         </div>
