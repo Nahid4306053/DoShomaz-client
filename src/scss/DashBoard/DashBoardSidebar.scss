@@ -1,0 +1,30 @@
+@import "../../Variable.scss";
+
+.DashBoardSidebar {
+  .manus {
+    .item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.277);
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      * {
+        font-size: 18px;
+        color: white;
+        font-weight: 400;
+      }
+      p {
+        margin-left: 5px;
+      }
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+      }
+      width: 100%;
+    }
+    .active {
+      background: #fdc632;
+    }
+  }
+}

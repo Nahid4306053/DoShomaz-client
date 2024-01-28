@@ -1,0 +1,68 @@
+@import "./Variable.scss";
+.sub-title {
+  color: #ffffff;
+  background-color: #002347;
+  padding: 10px;
+  text-align: center;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #002347;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: $primery;
+}
+body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.account {
+  a {
+    i {
+      width: 20px;
+      color: #002347c0 !important;
+    }
+    color: #002347c0 !important;
+    font-weight: bold;
+  }
+  p {
+    i {
+      width: 15px;
+      color: #002347c0 !important;
+    }
+    color: #002347c0 !important;
+    font-weight: bold;
+  }
+}
+
+.navbar {
+  .active {
+    color: #fdc632;
+  }
+}
+.account {
+  .active {
+    color: #fdc632 !important;
+    i {
+      color: #fdc632 !important;
+    }
+  }
+}
