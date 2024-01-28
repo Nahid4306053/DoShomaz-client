@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 
 import moment from "moment";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAuth } from "../../Context/Authinicetion";
 import user from "../../assets/user.png";
 import "../../scss/BlogCard.scss";
 import GoogleIcons from "../GoogleIcons";
+import HandelMarkedBlog from "./HandelMarkedBlog";
 
 export default function BlogFullPreviewCard({ element }) {
   const { currentUser } = useAuth();
@@ -37,7 +38,8 @@ export default function BlogFullPreviewCard({ element }) {
           </ul>
 
           {currentUser && currentUser.uid === element?.author.uid && (
-            <div className="icon">
+            <div className="icon flex gap-2">
+              <HandelMarkedBlog id={element._id}></HandelMarkedBlog>
               <NavLink to={`/dashboard/update-blog/${element._id}`}>
                 <i className="fa-solid text-blue-950 text-xl p-1 rounded-lg px-2 bg-base-300 fa-pen-to-square"></i>
               </NavLink>
@@ -57,14 +59,8 @@ export default function BlogFullPreviewCard({ element }) {
                   className="h-7 w-7 object-cover mr-1 rounded-full"
                   src={element?.author?.photoURL.trim() || user}
                   alt=""
-                />
-                <Link
-                  to={`/filter?user=${element?.author?._id}`}
-                  state={element?.author}
-                  className="font-semibold  hover:text-[#d2ad62]"
-                >
-                  {element?.author?.displayName}
-                </Link>
+                />    {element?.author?.displayName}
+
               </li>
               <li className="infos flex justify-end items-end ">
                 <GoogleIcons

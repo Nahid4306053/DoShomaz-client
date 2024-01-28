@@ -21,7 +21,6 @@ export default function BlogFullPreview() {
   }, [id]);
 
 
-
   return (
     <div className="col-span-full lg:pr-10 lg:col-span-8">
       {isLoading ? (

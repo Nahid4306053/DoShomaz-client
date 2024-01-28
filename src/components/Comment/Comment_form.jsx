@@ -6,7 +6,9 @@ import "../../scss/Commentform.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useAxios from "../../Hooks/DataFeachting/useAxios";
 import { useRef } from "react";
+import { useAuth } from "../../Context/Authinicetion";
 export default function Comment_form({blogId}) {
+  const {currentUser} = useAuth()
   const Axios = useAxios();
   const formref = useRef(); 
   const Queryclient = useQueryClient()
@@ -29,6 +31,7 @@ export default function Comment_form({blogId}) {
    const formdata = {};
    formdata.comment = form.target.comment.value.trim();
    if(formdata.comment){
+    formdata.commenter = currentUser._id;
     formdata.blog_id = blogId;  
     Mutation.mutate(formdata);
    }

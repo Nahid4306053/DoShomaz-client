@@ -14,6 +14,11 @@ export default function Navbar() {
         <NavLink to="/" className="text-[#002347] font-bold mr-5  cursor-pointer" >
           Blogs
         </NavLink>
+      </li>      
+      <li>
+        <NavLink to="/favorite" className="text-[#002347] font-bold mr-5  cursor-pointer" >
+          Favorite Blogs
+        </NavLink>
       </li>
    
       <li>

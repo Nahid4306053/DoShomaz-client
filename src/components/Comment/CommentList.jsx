@@ -69,58 +69,7 @@ export default function CommentList({ id }) {
                   </a>
                 </div>
 
-                <ul className="repleyList ml-11">
-                  {ele.replays.map((rep) => {
-                    return (
-                      <li key={rep._id}>
-                        <div className="commentItems come">
-                          <div className="media flex items-center mt-8">
-                            <a className="flex pages mr-5">
-                              <img
-                                className="h-16 w-16 object-cover"
-                                src={
-                                  rep?.replayer?.photoURL ||
-                                  "https://i.ibb.co/XkqVpKX/1682708266984.jpg"
-                                }
-                                alt=""
-                              />
-                            </a>
-                            <div className="">
-                              <div className="p-0 flex ">
-                                <p className="text-[color:#002347;] font-semibold">
-                                  {rep?.replayer?.displayName}
-                                </p>
-                              </div>
-                              <p className="text-sm  -mt-1">
-                                {moment(rep.date).format(
-                                  "MMMM Do YYYY, h:mm A"
-                                )}
-                              </p>
-                              <p className="mt-1">{rep.replay}</p>
-                            </div>
-                          </div>
-                          <a
-                            className="Replay cursor-pointer"
-                            onClick={() =>
-                              setCureentCommentID({
-                                id: ele._id,
-                                name: rep?.replayer?.displayName,
-                              })
-                            }
-                          >
-                            Reply
-                          </a>
-                        </div>
-                      </li>
-                    );
-                  })}
-                  {currentCommentId?.id === ele._id && (
-                    <ReplayForm
-                      currentCommentId={currentCommentId}
-                      setCureentCommentID={setCureentCommentID}
-                    ></ReplayForm>
-                  )}
-                </ul>
+              
               </li>
             );
           })
