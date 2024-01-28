@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import useAxios from "../../Hooks/DataFeachting/useAxios";
 import useSingelBlog from "../../Hooks/UseSingelBlog";
-import useCategories from "../../Hooks/useCategories";
+
 import UploadIMG from "../../Utils/UploadIMG";
 import Header from "../../components/Dashboard/DashBoardBody/Header";
 import { useAuth } from "../../Context/Authinicetion";

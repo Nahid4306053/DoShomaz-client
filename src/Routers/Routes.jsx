@@ -13,6 +13,7 @@ import BlogFullPreview from "../Pages/BlogFullPreview";
 import MyBlogs from "../Pages/DashBoard/MyBlogs";
 import UpdateBlog from "../Pages/DashBoard/UpdateBlog";
 import Notfound from "../Pages/Notfound";
+import FavoriteBlog from "../Pages/FavoriteBlog";
 const Routers = createBrowserRouter([
    {
     path: "/",
@@ -22,6 +23,10 @@ const Routers = createBrowserRouter([
       {
         path: "/",
         element : <Blogs></Blogs>            
+      },    
+        {
+        path: "/favorite",
+        element : <FavoriteBlog></FavoriteBlog>            
       }
       ,  {
         path: "/post/:id",

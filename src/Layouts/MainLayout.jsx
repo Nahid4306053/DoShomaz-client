@@ -8,7 +8,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 export default function MainLayout() {
   const {pathname} = useLocation()                  
-  const paths = ['/','/filter'];                  
+  const paths = ['/','/favorite'];                  
   return (        
    <><div><Toaster/></div>
     <div className='min-h-screen flex flex-col'>
