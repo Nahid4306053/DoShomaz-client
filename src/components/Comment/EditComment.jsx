@@ -6,7 +6,7 @@ import { useRef } from "react";
 import toast from "react-hot-toast";
 import useAxios from "../../Hooks/DataFeachting/useAxios";
 // import "../scss/Commentform.scss";
-export default function ReplayForm({ currentComment, setCurrentComment }) {
+export default function EditComment({ currentComment, setCurrentComment }) {
   const Axios = useAxios();
   const formref = useRef();
   const Queryclient = useQueryClient();

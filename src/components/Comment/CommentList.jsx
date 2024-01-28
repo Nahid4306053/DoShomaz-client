@@ -6,9 +6,10 @@ import moment from "moment";
 import { useState } from "react";
 import useComments from "../../Hooks/useComments";
 import "../../scss/CommentList.scss";
-import ReplayForm from "./ReplayForm";
+import EditComment from "./EditComment";
 import ErrorComponent from "../Shared/ErrrorComponet";
 import LoadingComponet from "../Shared/LoadingComponent";
+import DeleteComment from "./DeleteComment";
 export default function CommentList({ id }) {
   const [currentComment, setCurrentComment] = useState();
   const { Comments, error, isLoading, isError, isSuccess } = useComments(id);
@@ -54,14 +55,14 @@ export default function CommentList({ id }) {
                         <li>
                           <a onClick={()=>setCurrentComment(ele)}>Edit</a>
                         </li>
-                        <li>
-                          <a>Delete</a>
-                        </li>
+                     
+                       <DeleteComment id={ele._id}></DeleteComment>
+                      
                       </ul>
                     </details>
                   </div>
                 </div>
-              {currentComment._id === ele._id &&  <ReplayForm currentComment={currentComment} setCurrentComment={setCurrentComment}></ReplayForm>}
+              {currentComment && currentComment._id === ele._id &&  <EditComment currentComment={currentComment} setCurrentComment={setCurrentComment}></EditComment>}
               </li>
             );
           })
