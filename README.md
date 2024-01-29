@@ -6,37 +6,24 @@
 
 ## Live Website Preview
 
-[![Project Screenshot](https://github.com/Nahid4306053/nahid-eshomazv2-client/blob/main/public/full_web_preview.jpg)](https://eshomaz.netlify.app/)
+[![Project Screenshot](https://github.com/Nahid4306053/DoShomaz-client/blob/4195602a0afcf7aee3273f8dfb26387489432315/public/full_web_preview.jpg)](https://doshomaz.netlify.app/)
 
-[Click to View Live Website](https://eshomaz.netlify.app/)
+[Click to View Live Website](https://doshomaz.netlify.app/)
 
 ## Key Features
 
-### 1. User Authentication
 
-- Secure user authentication using Firebase Authentication.
-- User registration and login functionality.
-
-### 2. Blog Management
+### 1. Blog Management
 
 - Create, edit, and delete blog posts.
 - Rich text editor for formatting blog content.
 - Support for uploading and managing images within blog posts.
 
-### 3. Commenting System
+### 1. Commenting System
 
 - Enable users to leave comments on blog posts.
 - Edit and delete comments for user interaction.
 
-### 4. User Engagement
-
-- Like and dislike functionality for blog posts.
-- View counts to track the popularity of blog posts.
-
-### 5. File Upload System
-
-- Seamless integration with Firebase Storage for efficient file uploads.
-- Support for uploading and displaying images within blog posts.
 
 ## Technologies Used
 
@@ -51,11 +38,9 @@
 
 - **Node.js:** Server-side runtime for handling backend logic.
 - **Express.js:** Web application framework for Node.js.
-- **Firebase Authentication:** Secure user authentication.
-- **Firebase Realtime Database:** Storing blog posts, comments, and user data.
-- **Firebase Storage:** Managing file uploads and storage.
+- **MongoDB:** For storing Bison Data and Retrive.
+- **Mongoose:** For Handeling data model and handel according to file structure 
 
 ### Deployment
-
 - **Hosting:** Netlify
 - **Vercel:** Deploying and hosting the backend server.
