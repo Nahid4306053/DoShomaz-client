@@ -1,4 +1,4 @@
-# Nahid Eshomz - Blog Management Website
+[# Nahid Eshomz - Blog Management Website
 
 ## Project Overview
 
@@ -44,3 +44,4 @@
 ### Deployment
 - **Hosting:** Netlify
 - **Vercel:** Deploying and hosting the backend server.
+](https://raw.githubusercontent.com/Nahid4306053/DoShomaz-client/main/public/full_web_preview.jpg)https://raw.githubusercontent.com/Nahid4306053/DoShomaz-client/main/public/full_web_preview.jpg
